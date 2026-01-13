@@ -5,9 +5,9 @@
 
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/System/Clock.hpp>
 #include <vector>
-#include <random>
+
+#include "RandomizerAPI.hpp"
 
 class Application {
 public:
@@ -31,10 +31,7 @@ private:
 private:
     sf::RenderWindow m_Window;
     ImGuiSFMLBackend m_Backend;
-    std::random_device m_RandomDevice;
-    std::mt19937 m_RandomGenerator;
-    std::uniform_real_distribution<float> m_NormalFDistribution;
-    std::uniform_int_distribution<unsigned int> m_UIntDistribution;
+    RandomizerAPI m_Randomizer;
     std::vector<sf::RectangleShape> m_Rectangles;
 };
 
