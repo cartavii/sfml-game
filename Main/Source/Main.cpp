@@ -1,6 +1,10 @@
 #include "Application.hpp"
 
 int main() {
-    Application app;
-    return app.run();
+    try {
+        Application app;
+        return app.run();
+    } catch (const std::exception& e) {
+        return -1;
+    }
 }

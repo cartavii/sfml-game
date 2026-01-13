@@ -1,6 +1,8 @@
 #ifndef APPLICATION_HPP
 #define APPLICATION_HPP
 
+#include "ImGuiSfmlBackend.hpp"
+
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Clock.hpp>
@@ -10,7 +12,6 @@
 class Application {
 public:
     Application();
-    ~Application();
 
 public:
     int run();
@@ -29,7 +30,7 @@ private:
 
 private:
     sf::RenderWindow m_Window;
-    sf::Clock m_Clock;
+    ImGuiSFMLBackend m_Backend;
     std::random_device m_RandomDevice;
     std::mt19937 m_RandomGenerator;
     std::uniform_real_distribution<float> m_NormalFDistribution;
