@@ -1,19 +1,8 @@
 #include "RectangleManager.hpp"
 #include "JSONManager.hpp"
-#include "Random.hpp"
 
 void RectangleManager::generate() {
-    sf::Vector2f position = { 1.f, 1.f };
-    position.x *= Random::randomNormalFloat();
-    position.y *= Random::randomNormalFloat();
-    const sf::Vector2f viewSize(800.f, 600.f);
-    position.x *= viewSize.x;
-    position.y *= viewSize.y;
-    sf::Color color;
-    color.r = Random::randomByte();
-    color.g = Random::randomByte();
-    color.b = Random::randomByte();
-    m_Rectangles.addRectangle(RectangleData{ position, color });
+    m_Rectangles.addRectangle(m_Generator.generate());
 }
 
 void RectangleManager::clear() {
@@ -54,5 +43,5 @@ void RectangleManager::loadLast() {
 }
 
 void RectangleManager::render(sf::RenderTarget& target) {
-    m_RectangleRenderer.render(target, m_Rectangles);
+    m_Renderer.render(target, m_Rectangles);
 }

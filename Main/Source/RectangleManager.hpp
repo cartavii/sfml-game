@@ -2,6 +2,7 @@
 #define RECTANGLEMANAGER_HPP
 
 #include "Rectangles.hpp"
+#include "RectangleGenerator.hpp"
 #include "RectangleRenderer.hpp"
 
 class RectangleManager {
@@ -14,7 +15,8 @@ public:
 
 private:
     Rectangles m_Rectangles;
-    RectangleRenderer m_RectangleRenderer;
+    RectangleGenerator m_Generator;
+    RectangleRenderer m_Renderer;
 };
 
 #endif //RECTANGLEMANAGER_HPP
