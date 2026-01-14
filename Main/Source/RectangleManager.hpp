@@ -6,10 +6,14 @@
 #include "JSONRectangleStorage.hpp"
 #include "RectangleCommandsHandler.hpp"
 #include "RectangleRenderer.hpp"
+#include "Event.hpp"
 
 class RectangleManager {
 public:
-    RectangleManager();
+    RectangleManager(Event<>& generateEvent,
+                     Event<>& clearEvent,
+                     Event<>& saveEvent,
+                     Event<>& loadEvent);
 
 public:
     void render(sf::RenderTarget& target);

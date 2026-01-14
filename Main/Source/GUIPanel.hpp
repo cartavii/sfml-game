@@ -1,21 +1,25 @@
 #ifndef GUIPANEL_HPP
 #define GUIPANEL_HPP
 
-#include "RectangleManager.hpp"
-#include "RectangleCommandsHandler.hpp"
+#include "Event.hpp"
 
 class GUIPanel {
 public:
-    explicit GUIPanel(RectangleCommandsHandler& commands);
-
-public:
     void show();
+
+    Event<>& getGenerateEvent();
+    Event<>& getClearEvent();
+    Event<>& getSaveEvent();
+    Event<>& getLoadEvent();
 
 private:
     void render();
 
 private:
-    RectangleCommandsHandler& m_Commands;
+    Event<> m_GenerateEvent;
+    Event<> m_ClearEvent;
+    Event<> m_SaveEvent;
+    Event<> m_LoadEvent;
 };
 
 #endif //GUIPANEL_HPP

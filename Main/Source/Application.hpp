@@ -24,8 +24,8 @@ private:
 private:
     WindowManager m_Window;
     RandomAPI m_RandomAPI;
-    RectangleManager m_RectanglesManager;
     GUIPanel m_GUIPanel;
+    RectangleManager m_RectanglesManager;
 };
 
 #endif // APPLICATION_HPP

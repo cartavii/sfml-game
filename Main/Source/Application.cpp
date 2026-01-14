@@ -3,7 +3,10 @@
 
 Application::Application()
 : m_Window(sf::Vector2u(800, 600), "Prac5")
-, m_GUIPanel(m_RectanglesManager.getCommands()) {}
+, m_RectanglesManager(m_GUIPanel.getGenerateEvent(),
+                      m_GUIPanel.getClearEvent(),
+                      m_GUIPanel.getSaveEvent(),
+                      m_GUIPanel.getLoadEvent()) {}
 
 
 int Application::run() {
