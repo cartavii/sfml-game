@@ -2,7 +2,7 @@
 #include <SFML/Window/Event.hpp>
 
 Application::Application()
-: m_Window(sf::VideoMode(sf::Vector2u(800, 600)), "Prac1")
+: m_Window(sf::VideoMode(sf::Vector2u(800, 600)), "Prac2")
 , m_Backend(m_Window)
 , m_GUIPanel(m_RectanglesManager) {
     m_Window.setFramerateLimit(60);
