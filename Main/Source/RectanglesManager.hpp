@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/View.hpp>
+#include <SFML/System/Clock.hpp>
 #include <vector>
 
 class RectanglesManager {
@@ -16,6 +17,7 @@ public:
     void render(sf::RenderTarget& target);
 
 private:
+    sf::Clock m_DeltaClock;
     std::vector<sf::RectangleShape> m_Rectangles;
 };
 

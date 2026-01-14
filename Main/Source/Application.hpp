@@ -1,12 +1,14 @@
 #ifndef APPLICATION_HPP
 #define APPLICATION_HPP
 
-#include "ImGuiSfmlBackend.hpp"
+#include "ImGuiSFMLBackend.hpp"
 #include "GUIPanel.hpp"
 #include "RandomAPI.hpp"
 #include "RectanglesManager.hpp"
 
 #include <SFML/Graphics/RenderWindow.hpp>
+
+#include "WindowManager.hpp"
 
 class Application {
 public:
@@ -16,12 +18,11 @@ public:
     int run();
 
 private:
-    void processEvents();
+    void gui();
     void render();
 
 private:
-    sf::RenderWindow m_Window;
-    ImGuiSFMLBackend m_Backend;
+    WindowManager m_Window;
     RandomAPI m_RandomAPI;
     RectanglesManager m_RectanglesManager;
     GUIPanel m_GUIPanel;
