@@ -3,6 +3,7 @@
 
 #include "Rectangles.hpp"
 #include "RectangleGenerator.hpp"
+#include "JSONRectangleStorage.hpp"
 #include "RectangleCommandsHandler.hpp"
 #include "RectangleRenderer.hpp"
 
@@ -18,6 +19,7 @@ public:
 private:
     Rectangles m_Rectangles;
     RectangleGenerator m_Generator;
+    JSONRectangleStorage m_Storage;
     RectangleCommandsHandler m_CommandsHandler;
     RectangleRenderer m_Renderer;
 };

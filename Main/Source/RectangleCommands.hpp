@@ -4,6 +4,7 @@
 #include "IRectangleCommand.hpp"
 #include "Rectangles.hpp"
 #include "RectangleGenerator.hpp"
+#include "IRectangleStorage.hpp"
 
 class RectangleCommandGenerate : public IRectangleCommand {
 public:
@@ -30,24 +31,26 @@ private:
 
 class RectangleCommandSave : public IRectangleCommand {
 public:
-    RectangleCommandSave(Rectangles& rectangles);
+    RectangleCommandSave(Rectangles& rectangles, IRectangleStorage& storage);
 
 public:
     void execute() override;
 
 private:
     Rectangles& m_Rectangles;
+    IRectangleStorage& m_Storage;
 };
 
 class RectangleCommandLoadLast : public IRectangleCommand {
 public:
-    RectangleCommandLoadLast(Rectangles& rectangles);
+    RectangleCommandLoadLast(Rectangles& rectangles, IRectangleStorage& storage);
 
 public:
     void execute() override;
 
 private:
     Rectangles& m_Rectangles;
+    IRectangleStorage& m_Storage;
 };
 
 #endif //IRECTANGLECOMMAND_HPP

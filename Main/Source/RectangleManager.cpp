@@ -4,8 +4,8 @@ RectangleManager::RectangleManager()
 : m_CommandsHandler{
     { m_Rectangles, m_Generator },
     { m_Rectangles },
-    { m_Rectangles },
-    { m_Rectangles }
+    { m_Rectangles, m_Storage },
+    { m_Rectangles, m_Storage }
 } {}
 
 void RectangleManager::render(sf::RenderTarget& target) {
