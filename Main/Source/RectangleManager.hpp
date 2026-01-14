@@ -2,19 +2,26 @@
 #define RECTANGLEMANAGER_HPP
 
 #include "Rectangles.hpp"
+#include "RectangleGenerator.hpp"
+#include "JSONRectangleStorage.hpp"
+#include "RectangleCommandsHandler.hpp"
 #include "RectangleRenderer.hpp"
 
 class RectangleManager {
 public:
-    void generate();
-    void clear();
-    void save();
-    void loadLast();
+    RectangleManager();
+
+public:
     void render(sf::RenderTarget& target);
+
+    RectangleCommandsHandler& getCommands();
 
 private:
     Rectangles m_Rectangles;
-    RectangleRenderer m_RectangleRenderer;
+    RectangleGenerator m_Generator;
+    JSONRectangleStorage m_Storage;
+    RectangleCommandsHandler m_CommandsHandler;
+    RectangleRenderer m_Renderer;
 };
 
 #endif //RECTANGLEMANAGER_HPP

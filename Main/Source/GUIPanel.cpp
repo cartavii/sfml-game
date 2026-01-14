@@ -2,8 +2,8 @@
 
 #include "imgui.h"
 
-GUIPanel::GUIPanel(RectangleManager& rectanglesManager)
-: m_RectanglesManager(rectanglesManager) {}
+GUIPanel::GUIPanel(RectangleCommandsHandler& commands)
+: m_Commands(commands) {}
 
 void GUIPanel::show() {
     if (ImGui::Begin("Panel")) {
@@ -15,16 +15,16 @@ void GUIPanel::show() {
 void GUIPanel::render() {
     ImGui::SeparatorText("Rectangle");
     if (ImGui::Button("Spawn rectangle")) {
-        m_RectanglesManager.generate();
+        m_Commands.m_Generate.execute();
     }
     if (ImGui::Button("Clear rectangles")) {
-        m_RectanglesManager.clear();
+        m_Commands.m_Clear.execute();
     }
     ImGui::SeparatorText("File");
     if (ImGui::Button("Save")) {
-        m_RectanglesManager.save();
+        m_Commands.m_Save.execute();
     }
     if (ImGui::Button("Load last")) {
-        m_RectanglesManager.loadLast();
+        m_Commands.m_LoadLast.execute();
     }
 }
