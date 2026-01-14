@@ -3,7 +3,7 @@
 
 #include "ImGuiSfmlBackend.hpp"
 #include "GUIPanel.hpp"
-#include "RandomizerAPI.hpp"
+#include "RandomAPI.hpp"
 #include "RectanglesManager.hpp"
 
 #include <SFML/Graphics/RenderWindow.hpp>
@@ -22,7 +22,7 @@ private:
 private:
     sf::RenderWindow m_Window;
     ImGuiSFMLBackend m_Backend;
-    RandomizerAPI m_Randomizer;
+    RandomAPI m_RandomAPI;
     RectanglesManager m_RectanglesManager;
     GUIPanel m_GUIPanel;
 };

@@ -1,5 +1,5 @@
 #include "RectanglesManager.hpp"
-#include "RandomizerAPI.hpp"
+#include "Random.hpp"
 
 #include "nlohmann/json.hpp"
 #include <SFML/Graphics/RenderTarget.hpp>
@@ -8,17 +8,17 @@
 
 void RectanglesManager::generate(const sf::View& view) {
     sf::Vector2f position = { 1.f, 1.f };
-    position.x *= RandomizerAPI::randomNormalFloat();
-    position.y *= RandomizerAPI::randomNormalFloat();
+    position.x *= Random::randomNormalFloat();
+    position.y *= Random::randomNormalFloat();
     const sf::Vector2f viewSize = view.getSize();
     const sf::Vector2f viewTolLeft = view.getCenter() - viewSize / 2.f;
     position.x *= viewSize.x;
     position.y *= viewSize.y;
     position += viewTolLeft;
     sf::Color color;
-    color.r = RandomizerAPI::randomByte();
-    color.g = RandomizerAPI::randomByte();
-    color.b = RandomizerAPI::randomByte();
+    color.r = Random::randomByte();
+    color.g = Random::randomByte();
+    color.b = Random::randomByte();
     sf::RectangleShape rectangle;
     rectangle.setSize({ 50.f, 50.f });
     rectangle.setPosition(position);
