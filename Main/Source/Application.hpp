@@ -2,6 +2,7 @@
 #define APPLICATION_HPP
 
 #include "ImGuiSfmlBackend.hpp"
+#include "GUIPanel.hpp"
 #include "RandomizerAPI.hpp"
 #include "RectanglesManager.hpp"
 
@@ -16,7 +17,6 @@ public:
 
 private:
     void processEvents();
-    void guiRender();
     void render();
 
 private:
@@ -24,6 +24,7 @@ private:
     ImGuiSFMLBackend m_Backend;
     RandomizerAPI m_Randomizer;
     RectanglesManager m_RectanglesManager;
+    GUIPanel m_GUIPanel;
 };
 
 #endif // APPLICATION_HPP
