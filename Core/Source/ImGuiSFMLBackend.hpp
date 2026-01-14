@@ -6,7 +6,7 @@
 
 class ImGuiSFMLBackend {
 public:
-    ImGuiSFMLBackend(sf::RenderWindow& renderWindow);
+    explicit ImGuiSFMLBackend(sf::RenderWindow& renderWindow);
     ~ImGuiSFMLBackend();
 
 public:

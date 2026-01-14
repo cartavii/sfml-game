@@ -4,5 +4,7 @@ project(SFML)
 set(CMAKE_CXX_STANDARD 20)
 
 add_subdirectory(Externals)
+
+add_subdirectory(Core)
 add_subdirectory(Random)
 add_subdirectory(Main)

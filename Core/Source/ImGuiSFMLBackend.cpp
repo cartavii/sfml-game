@@ -1,4 +1,4 @@
-#include "ImGuiSfmlBackend.hpp"
+#include "ImGuiSFMLBackend.hpp"
 
 #include "imgui-SFML.h"
 
