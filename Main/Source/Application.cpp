@@ -2,7 +2,7 @@
 #include <SFML/Window/Event.hpp>
 
 Application::Application()
-: m_Window(sf::Vector2u(800, 800), "Prac4")
+: m_Window(sf::Vector2u(800, 800), "Prac5")
 , m_GUIPanel(m_RectanglesManager.getCommands()) {}
 
 
