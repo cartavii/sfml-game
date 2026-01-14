@@ -2,12 +2,10 @@
 #define APPLICATION_HPP
 
 #include "ImGuiSfmlBackend.hpp"
-
-#include <SFML/Graphics/RectangleShape.hpp>
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <vector>
-
 #include "RandomizerAPI.hpp"
+#include "RectanglesManager.hpp"
+
+#include <SFML/Graphics/RenderWindow.hpp>
 
 class Application {
 public:
@@ -19,20 +17,13 @@ public:
 private:
     void processEvents();
     void guiRender();
-    void renderRectangles();
     void render();
-
-    void spawnRectangle();
-    void clearRectangles();
-
-    void saveRectangles();
-    void loadRectangles();
 
 private:
     sf::RenderWindow m_Window;
     ImGuiSFMLBackend m_Backend;
     RandomizerAPI m_Randomizer;
-    std::vector<sf::RectangleShape> m_Rectangles;
+    RectanglesManager m_RectanglesManager;
 };
 
 #endif // APPLICATION_HPP
