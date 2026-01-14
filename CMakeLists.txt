@@ -7,4 +7,5 @@ add_subdirectory(Externals)
 
 add_subdirectory(Core)
 add_subdirectory(Random)
+add_subdirectory(React)
 add_subdirectory(Main)
