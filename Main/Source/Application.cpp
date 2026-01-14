@@ -3,7 +3,7 @@
 
 Application::Application()
 : m_Window(sf::Vector2u(800, 800), "Prac2")
-, m_GUIPanel(m_RectanglesManager) {}
+, m_GUIPanel(m_RectanglesManager.getCommands()) {}
 
 int Application::run() {
     while (m_Window.isOpen()) {
