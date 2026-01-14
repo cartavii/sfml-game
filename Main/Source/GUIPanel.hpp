@@ -1,11 +1,11 @@
 #ifndef GUIPANEL_HPP
 #define GUIPANEL_HPP
 
-#include "RectanglesManager.hpp"
+#include "RectangleManager.hpp"
 
 class GUIPanel {
 public:
-    explicit GUIPanel(RectanglesManager& rectanglesManager);
+    explicit GUIPanel(RectangleManager& rectanglesManager);
 
 public:
     void show();
@@ -14,7 +14,7 @@ private:
     void render();
 
 private:
-    RectanglesManager& m_RectanglesManager;
+    RectangleManager& m_RectanglesManager;
 };
 
 #endif //GUIPANEL_HPP

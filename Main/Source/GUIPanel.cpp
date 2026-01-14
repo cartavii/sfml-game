@@ -2,7 +2,7 @@
 
 #include "imgui.h"
 
-GUIPanel::GUIPanel(RectanglesManager& rectanglesManager)
+GUIPanel::GUIPanel(RectangleManager& rectanglesManager)
 : m_RectanglesManager(rectanglesManager) {}
 
 void GUIPanel::show() {
@@ -15,10 +15,10 @@ void GUIPanel::show() {
 void GUIPanel::render() {
     ImGui::SeparatorText("Rectangle");
     if (ImGui::Button("Spawn rectangle")) {
-        m_RectanglesManager.generate(sf::View({ 400, 300 }, { 800, 600 }));
+        m_RectanglesManager.generate();
     }
     if (ImGui::Button("Clear rectangles")) {
-        m_RectanglesManager.clearAll();
+        m_RectanglesManager.clear();
     }
     ImGui::SeparatorText("File");
     if (ImGui::Button("Save")) {

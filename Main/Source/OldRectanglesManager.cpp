@@ -1,11 +1,11 @@
-#include "RectanglesManager.hpp"
+#include "OldRectanglesManager.hpp"
 #include "JSONManager.hpp"
 #include "Random.hpp"
 
 #include "nlohmann/json.hpp"
 #include <SFML/Graphics/RenderTarget.hpp>
 
-void RectanglesManager::generate(const sf::View& view) {
+void OldRectanglesManager::generate(const sf::View& view) {
     sf::Vector2f position = { 1.f, 1.f };
     position.x *= Random::randomNormalFloat();
     position.y *= Random::randomNormalFloat();
@@ -25,11 +25,11 @@ void RectanglesManager::generate(const sf::View& view) {
     m_Rectangles.push_back(rectangle);
 }
 
-void RectanglesManager::clearAll() {
+void OldRectanglesManager::clearAll() {
     m_Rectangles.clear();
 }
 
-void RectanglesManager::save() {
+void OldRectanglesManager::save() {
     nlohmann::json fileData = nlohmann::json::array();
     for (const auto& rectangle : m_Rectangles) {
         nlohmann::json rectJson;
@@ -42,7 +42,7 @@ void RectanglesManager::save() {
     JSONManager::save(fileData, "Rectangles.json");
 }
 
-void RectanglesManager::loadLast() {
+void OldRectanglesManager::loadLast() {
     clearAll();
     const nlohmann::json fileData = JSONManager::load("Rectangles.json");
     for (const auto& rectJson : fileData) {
@@ -63,7 +63,7 @@ void RectanglesManager::loadLast() {
     }
 }
 
-void RectanglesManager::render(sf::RenderTarget& target) {
+void OldRectanglesManager::render(sf::RenderTarget& target) {
     for (const auto& rectangle : m_Rectangles) {
         target.draw(rectangle);
     }

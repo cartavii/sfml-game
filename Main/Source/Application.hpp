@@ -4,7 +4,7 @@
 #include "ImGuiSFMLBackend.hpp"
 #include "GUIPanel.hpp"
 #include "RandomAPI.hpp"
-#include "RectanglesManager.hpp"
+#include "RectangleManager.hpp"
 
 #include <SFML/Graphics/RenderWindow.hpp>
 
@@ -24,7 +24,7 @@ private:
 private:
     WindowManager m_Window;
     RandomAPI m_RandomAPI;
-    RectanglesManager m_RectanglesManager;
+    RectangleManager m_RectanglesManager;
     GUIPanel m_GUIPanel;
 };
 

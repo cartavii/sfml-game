@@ -6,7 +6,7 @@
 #include <SFML/System/Clock.hpp>
 #include <vector>
 
-class RectanglesManager {
+class OldRectanglesManager {
 public:
     void generate(const sf::View& view);
     void clearAll();
