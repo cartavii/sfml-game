@@ -9,7 +9,7 @@ void MovementSystem(entt::registry& registry, const float deltaTime) {
     auto view = registry.view<Angle>();
     for (auto entity : view) {
         auto& angle = view.get<Angle>(entity);
-        angle.degrees += deltaTime;
+        angle.degrees += angle.rotation * deltaTime;
     }
 }
 

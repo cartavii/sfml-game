@@ -22,7 +22,7 @@ void RectangleGenerator::generate(entt::registry& registry) const {
     position.x = m_PositionGenerator->getRandom();
     position.y = m_PositionGenerator->getRandom();
     angle.degrees = m_AngleGenerator->getRandom();
-    angle.degrees = m_RotationGenerator->getRandom();
+    angle.rotation = m_RotationGenerator->getRandom();
     color.r = m_ColorGenerator->getRandom();
     color.g = m_ColorGenerator->getRandom();
     color.b = m_ColorGenerator->getRandom();
