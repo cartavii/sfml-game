@@ -1,5 +1,6 @@
 #include "Application.hpp"
 #include <SFML/Window/Event.hpp>
+#include "Systems.hpp"
 
 Application::Application()
 : m_Window(sf::Vector2u(800, 800), "Prac7")
@@ -12,10 +13,15 @@ Application::Application()
 int Application::run() {
     while (m_Window.isOpen()) {
         m_Window.processEvents();
+        update();
         gui();
         render();
     }
     return 0;
+}
+
+void Application::update() {
+    m_RectanglesManager.update(m_DeltaClock.restart().asSeconds() * 60.f);
 }
 
 void Application::gui() {

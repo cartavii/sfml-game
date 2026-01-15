@@ -1,14 +1,12 @@
 #ifndef APPLICATION_HPP
 #define APPLICATION_HPP
 
-#include "ImGuiSFMLBackend.hpp"
 #include "GUIPanel.hpp"
 #include "RandomAPI.hpp"
 #include "RectangleManager.hpp"
-
-#include <SFML/Graphics/RenderWindow.hpp>
-
 #include "WindowManager.hpp"
+
+#include <SFML/System/Clock.hpp>
 
 class Application {
 public:
@@ -18,10 +16,12 @@ public:
     int run();
 
 private:
+    void update();
     void gui();
     void render();
 
 private:
+    sf::Clock m_DeltaClock;
     WindowManager m_Window;
     RandomAPI m_RandomAPI;
     GUIPanel m_GUIPanel;

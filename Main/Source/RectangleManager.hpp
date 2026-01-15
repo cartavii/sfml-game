@@ -1,12 +1,11 @@
 #ifndef RECTANGLEMANAGER_HPP
 #define RECTANGLEMANAGER_HPP
 
-#include "Rectangles.hpp"
+#include <entt/entt.hpp>
 #include "RectangleGenerator.hpp"
-#include "JSONRectangleStorage.hpp"
-#include "RectangleCommandsHandler.hpp"
-#include "RectangleRenderer.hpp"
 #include "Event.hpp"
+
+#include <SFML/Graphics/RenderTarget.hpp>
 
 class RectangleManager {
 public:
@@ -16,16 +15,12 @@ public:
                      Event<>& loadEvent);
 
 public:
+    void update(float deltaTime);
     void render(sf::RenderTarget& target);
 
-    RectangleCommandsHandler& getCommands();
-
 private:
-    Rectangles m_Rectangles;
+    entt::registry m_Registry;
     RectangleGenerator m_Generator;
-    JSONRectangleStorage m_Storage;
-    RectangleCommandsHandler m_CommandsHandler;
-    RectangleRenderer m_Renderer;
 };
 
 #endif //RECTANGLEMANAGER_HPP
